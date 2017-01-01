@@ -1,0 +1,37 @@
+footer {
+  text-align: center;
+}
+
+hr {
+  width: 20em;
+  margin: 1em auto;
+  height: 3px;
+  border-radius: 1px;
+  border: none;
+  background: $gray;
+}
+
+#social {
+  img {
+    padding: 1.2em;
+    max-width: 2.5em;
+    opacity: .6;
+    @include trans();
+    &:hover {
+      opacity: 1;
+      transform: scale(1.02);
+    }
+  }
+}
+
+h2 a {
+  margin: .5em 0;
+  font-size: 1.3em;
+  letter-spacing: .08em;
+  font-weight: 400;
+  @include trans();
+  &:hover {
+    color: #fff;
+    transform: scale(1.02);
+  }
+}

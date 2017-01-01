@@ -1,0 +1,122 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway:400,700,900';
+
+/* Resets, variables, mixins, and general styles */
+
+$bg:            #000;
+$gray:          lighten($bg, 60%);
+$i:             !important;
+
+$ghost1:        rgba(255, 255, 255, .1);
+$ghost2:        rgba(255, 255, 255, .2);
+$ghost3:        rgba(255, 255, 255, .3);
+$ghost4:        rgba(255, 255, 255, .4);
+$ghost5:        rgba(255, 255, 255, .5);
+$ghost6:        rgba(255, 255, 255, .6);
+$ghost7:        rgba(255, 255, 255, .7);
+$ghost8:        rgba(255, 255, 255, .8);
+$ghost9:        rgba(255, 255, 255, .9);
+
+@mixin keep-size() {
+  -moz-box-sizing: border-box;    /* Firefox */
+  -webkit-box-sizing: border-box; /* Safari */
+  box-sizing: border-box;
+}
+
+@mixin no-select() {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;
+}
+
+@mixin trans($property:.15s) {
+  -o-transition: $property;
+  -ms-transition: $property;
+  -moz-transition: $property;
+  -webkit-transition: $property;
+  transition: $property;
+  -webkit-transition-timing-function: ease-out; /* Safari and Chrome */
+  transition-timing-function: ease-out;
+  -webkit-backface-visibility: hidden;
+}
+
+@mixin shadow($default: 0 5px 5px -5px rgba(0,0,0,.4)) {
+  -webkit-box-shadow: $default;
+  -moz-box-shadow: $default;
+  box-shadow: $default;
+}
+
+@mixin vert-gradient($top: #6a1b9a,$bottom: #421375) {
+  background: $bottom; /* Old browsers */
+  background: -moz-linear-gradient(top, $top 0%, $bottom 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, $top 0%,$bottom 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, $top 0%,$bottom 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+@mixin trans-fix() {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+}
+
+@-webkit-keyframes bounce {
+  0%       { bottom: 0px; }
+  50%      { bottom: 5px; }
+  100%     { bottom: 0px; }
+}
+@-moz-keyframes bounce {
+  0%       { bottom: 0px; }
+  50%      { bottom: 5px; }
+  100%     { bottom: 0px; }
+}
+@-o-keyframes bounce {
+  0%       { bottom: 0px; }
+  50%      { bottom: 5px; }
+  100%     { bottom: 0px; }
+}
+@keyframes bounce {
+  0%       { bottom: 0px; }
+  50%      { bottom: 5px; }
+  100%     { bottom: 0px; }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: $gray;
+  z-index: 1;
+}
+
+html, body {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  //height: 100%;
+}
+
+body {
+  background: $bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  position: relative;
+
+}
+
+#content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left   { float: left; }
+.right  { float: right; }
+.clear  { clear: both; }
+a       { text-decoration: none; }

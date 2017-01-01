@@ -1,0 +1,8 @@
+#main-logo {
+  width: 100%;
+  max-width: 50em;
+  display: block;
+  padding: 0 1em;
+  margin: 3em auto;
+  @include keep-size();
+}
